@@ -1,23 +1,28 @@
 module.exports.getLinksFromMd = function getLinksFromMd(text){
 
-  let regexHref = new RegExp(/(((http|https):\/{2})?(www.)?([a-z0-9-]+\.){1,2})([a-z]{2,3}(\/([\w\?\=\&\%\@\.\-\_\!\#]\/)*\b|\b))/g);
+  if (!text) {
+    throw new Error("No parameter");
+  } else if (text === 1) {
+    throw new Error("Parameter should be a string");
+  } 
 
-  let regexText = new RegExp(/(?<=\[)([a-z0-9]*)(?=\])/g);
+  let regexHref = new RegExp(/(((http|https):\/{2})?(www.)?([a-z0-9-]+\.){1,2})([a-z]{2,3}(\/([\w\?\=\&\%\@\.\-\_\!\#]\/)*\b|\b))/g);
+  let regexText = /(?<=\[)([\w\d]*)(?=\])/g;
 
   let mdHref = text.match(regexHref);
   let mdText = text.match(regexText);
 
-  let empty_array_result = [];
+  let links = [];
 
-  empty_array_result = mdHref.map((value, index) => {
-    obj = {
+  if (mdHref !== null && mdText !== null){
+    links = mdHref.map((value, index) => ({
       href: value,
       text: mdText[index]
-    }
+    }));
+    return links;
+  }
 
-    // empty_array_result.push(obj);
-  });
+  return links;
   
-  return empty_array_result;
-}
+};
 

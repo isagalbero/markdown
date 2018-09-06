@@ -1,0 +1,30 @@
+{
+  "name": "mark-markdown-down",
+  "version": "1.0.0",
+  "description": "Implementar um módulo de Node.js que receba uma string (em formato Markdown) e extraia todos os links encontrados.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dnyc \u001b[3\u001b[ nyc mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isagalbero/markdown.git"
+  },
+  "keywords": [
+    "markdown",
+    "node.js",
+    "extract-link",
+    "link extractor"
+  ],
+  "author": "isagalbero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isagalbero/markdown/issues"
+  },
+  "homepage": "https://github.com/isagalbero/markdown#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "nyc": "^13.0.1"
+  }
+}
